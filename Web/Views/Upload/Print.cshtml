@@ -1,0 +1,82 @@
+﻿@model F.FootballDto
+
+@{
+    ViewBag.Title = "Заявка";
+}
+<h2> Заявка в футбольный клуб </h2>
+<br>
+<table border="1">
+    <tr>
+        <td>Время заполнения</td>
+        <td>@Model.Filled</td>
+    </tr>
+    <tr>
+        <td>ФИО</td>
+        <td>@Model.FullName</td>
+    </tr>
+    <tr>
+        <td>Гражданство</td>
+        <td>@Model.Citizenship</td>
+    </tr>
+    <tr>
+        <td>Возраст</td>
+        <td> @Model.Age лет</td>
+    </tr>
+    <tr>
+        <td>Рост</td>
+        <td>@Model.Height см</td>
+    </tr>
+    <tr>
+        <td>Вес</td>
+        <td>@Model.Weight кг</td>
+    </tr>
+    <tr>
+        <td>Позиция</td>
+        <td>@Model.Position</td>
+    </tr>
+    <tr>
+        <td>Рабочая нога</td>
+        <td>@Model.WorkingLeg</td>
+    </tr>
+    <tr>
+        <td>Сильные стороны футболиста </td>
+        <td>@Model.Strength1, @Model.Strength2, @Model.Strength3  </td>
+    </tr>
+
+    <tr>
+        <td>Слабые стороны футболиста </td>
+        <td>@Model.WeakSides1, @Model.WeakSides2, @Model.WeakSides3  </td>
+    </tr>
+    <tr>
+        <td>Возраст начала карьеры </td>
+        <td>@Model.AgeStartCareer лет</td>
+    </tr>
+    <tr>
+        <td>Количество травм за карьеру </td>
+        <td>@Model.CountTraums травм</td>
+    </tr>
+    <tr>
+        <td>Кол-во матчей, пропущенных из-за травм </td>
+        <td>@Model.TimeTraums матчей</td>
+    </tr>
+</table>
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <br>
+        <br>
+        <h4>Травмы футболиста:</h4>
+    </tr>
+    <tbody>
+
+        @foreach (var ht in Model.Traums)
+        {
+            <tr>
+                            @ht        
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
